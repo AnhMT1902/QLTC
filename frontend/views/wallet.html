@@ -49,9 +49,11 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="../template/index.html" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="../views/login_register.html">Đăng Xuất</a></li>
-                        <li class="scroll-to-section"><a href="../views/passwordChange.html">Đổi Mật Khẩu</a></li>
+                        <li class="scroll-to-section"><a href="home.html" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="login_register.html" onclick="logOut()">Đăng Xuất</a></li>
+                        <li class="scroll-to-section"><a href="passwordChange.html">Đổi Mật Khẩu</a></li>
+                        <li class="scroll-to-section"><a onclick="showWallet()">Click</a></li>
+
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -101,9 +103,9 @@
                             </div>
                         </div>
                         <div class="col-lg-8">
-                            <div class="right-content">
-                                <h4>Tên ví</h4>
-                                <h4>Tiền</h4>
+                            <div class="right-content" id="WAlLET">
+                                <h4 id="walletName">Tên ví</h4>
+                                <h4 id="money">Tiền</h4>
                             </div>
                         </div>
                     </div>
@@ -125,6 +127,22 @@
 
 </body>
 </html>
+<script>
+    import {Wallet} from "../../backend/src/model/wallet";
 
+    function showWallet() {
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:3000/wallet/show',
+            success: (wallet) => {
+                console.log(wallet)
+            }
+        })
+    }
+    function logOut(){
+        localStorage.clear()
+    }
+</script>
 </body>
 </html>
