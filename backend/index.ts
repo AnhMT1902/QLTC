@@ -1,6 +1,6 @@
 import express from "express";
 import fileUpload from "express-fileupload"
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 import {router} from "./src/router/router";
 import cors from "cors";
 
@@ -16,11 +16,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/finance').then(() => {
     console.log(err)
 });
 app.use(cors());
-app.use('',router)
+app.use('', router)
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
-
-
 app.listen(3000, () => {
     console.log('server running localhost 3000')
 })
