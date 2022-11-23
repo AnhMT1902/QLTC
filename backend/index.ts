@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/finance').then(() => {
     console.log(err)
 });
 app.use(cors());
-app.use('',router)
+app.use('', router)
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
