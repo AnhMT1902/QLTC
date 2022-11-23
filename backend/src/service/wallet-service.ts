@@ -1,6 +1,7 @@
 import {Request, Response} from "express";
 import {Wallet} from "../model/wallet";
 import {Detail} from "../model/detail";
+import {Spending} from "../model/spending";
 
 class WalletService {
     getAllWallet = async (req: Request, res: Response) => {
@@ -28,6 +29,7 @@ class WalletService {
     deleteWallet = async (req: Request, res: Response) => {
         let id = req.params.id
         await Wallet.deleteOne({_id: id})
+        await Detail.deleteMany({idWallet: id})
         return res.status(201).json({
             message: "Delete Success"
         })
@@ -36,7 +38,7 @@ class WalletService {
     editWallet = async (req: Request, res: Response) => {
         let id = req.params.id
         let newWallet = req.body
-        await Wallet.updateMany({_id: id}, {$set: newWallet})
+        await Wallet.updateOne({_id: id}, {$set: newWallet})
         return res.status(201).json({
             message: "Edit Success"
         })
@@ -59,8 +61,8 @@ class WalletService {
     showWalletById = async (req: Request, res: Response) => {
         let idWallet = req.params.id
         let wallet = await Wallet.findOne({_id: idWallet})
-        wallet.money = +await this.calSurplus(req, res, idWallet)
-        console.log(wallet)
+        let money = +await this.calSurplus(req, res, idWallet)
+        await Wallet.updateOne({_id: idWallet}, {$set: {money: money}});
         return res.status(201).json(wallet)
     }
 
