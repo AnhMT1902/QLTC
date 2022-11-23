@@ -282,13 +282,13 @@
                 <h2 class="title">Sign In</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="UserName">
+                    <input type="text" id="username" placeholder="UserName" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
-                <input type="submit" value="Login" class="btn solid">
+                <input value="Login" class="btn solid" onclick="login()" style="text-align: center" type="submit">
                 <p class="social-text"> or Sign In social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -310,17 +310,13 @@
                 <h2 class="title">Sign Up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="UserName">
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email">
+                    <input type="text" id="usernameRegister" placeholder="UserName" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" id="passwordRegister" placeholder="Password" required>
                 </div>
-                <input type="submit" value="Sign Up" class="btn solid">
+                <input value="Sign Up" class="btn solid" onclick="register()" style="text-align: center" type="submit">
                 <p class="social-text"> or Sign Up social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -360,7 +356,59 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script>
+
+    //Register start
+    function register() {
+        let username = $('#usernameRegister').val();
+        let password = $('#passwordRegister').val();
+        let user = {
+            username: username,
+            password: password
+        }
+        console.log(user)
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/user/register',
+            data: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: () => {
+                alert('Register Success')
+            }
+        })
+    }
+
+    //Register end
+
+    //Login Start
+    function login() {
+        let username = $('#username').val();
+        let password = $('#password').val();
+        let user = {
+            username: username,
+            password: password
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/user/login',
+            data: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: (token) => {
+                localStorage.setItem('token', token.token);
+            }
+        })
+    }
+
+    //Login End
+
+
+    //Animation onclick start
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
     const container = document.querySelector(".container");
@@ -372,6 +420,7 @@
     sign_in_btn.addEventListener('click', () => {
         container.classList.remove("sign-up-mode");
     })
+    //Animation onclick end
 </script>
 </body>
 </html>
