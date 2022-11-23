@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 export const SECRET = "financial"
 export const auth = (req, res, next) => {

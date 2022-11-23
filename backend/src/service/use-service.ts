@@ -63,9 +63,10 @@ class AccountService {
         })
     }
     editPassword = async (req: Request, res: Response) =>{
-        let password = req.body;
+        let newPassword = req.body;
         let id = req.params.id;
-        await User.updateOne({_id:id},{$set:{password:password}});
+        newPassword.password = await bcrypt.hash(newPassword.password, 10);
+        await User.updateOne({_id:id},{$set:newPassword});
         return res.status(201).json({
             message:"Upload Password Success!!!"
         })
