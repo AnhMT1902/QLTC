@@ -282,13 +282,13 @@
                 <h2 class="title">Sign In</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" placeholder="UserName" required>
+                    <input type="text" id="username" placeholder="UserName">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password">
                 </div>
-                <input value="Login" class="btn solid" onclick="login()" style="text-align: center" type="submit">
+                <input value="Login" class="btn solid" onclick="login()" style="text-align: center">
                 <p class="social-text"> or Sign In social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -310,13 +310,13 @@
                 <h2 class="title">Sign Up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="usernameRegister" placeholder="UserName" required>
+                    <input type="text" id="usernameRegister" placeholder="UserName">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="passwordRegister" placeholder="Password" required>
+                    <input type="password" id="passwordRegister" placeholder="Password">
                 </div>
-                <input value="Sign Up" class="btn solid" onclick="register()" style="text-align: center" type="submit">
+                <input value="Sign Up" class="btn solid" onclick="register()" style="text-align: center">
                 <p class="social-text"> or Sign Up social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -368,7 +368,6 @@
             username: username,
             password: password
         }
-        console.log(user)
         $.ajax({
             type: 'POST',
             url: 'http://localhost:3000/user/register',
@@ -376,8 +375,13 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            success: () => {
-                alert('Register Success')
+            success: (token) => {
+                if(token.check===true){
+                    alert('Register Success')
+                }else {
+                    alert('Account da ton tai!!!')
+                }
+
             }
         })
     }
@@ -400,7 +404,15 @@
                 'Content-Type': 'application/json'
             },
             success: (token) => {
-                localStorage.setItem('token', token.token);
+                if (token.token === undefined) {
+                    document.location.href="login_register.html"
+                    alert("Wrong PassWord or User!!!")
+                } else {
+                    localStorage.setItem('token', token.token);
+                    localStorage.setItem('id', token.idUser);
+
+                    document.location.href = "home.html"
+                }
             }
         })
     }

@@ -14,12 +14,14 @@ class AccountService {
         });
         if (userFind) {
             return res.status(201).json({
-                message: "Account da ton tai!!!"
+                message: "Account da ton tai!!!",
+                check: false
             })
         } else {
             user = await User.create(user);
             return res.status(201).json({
-                message: "Success"
+                message: "Success",
+                check: true,
             })
         }
     }
@@ -50,7 +52,7 @@ class AccountService {
                 return res.status(200).json({
                     token: token,
                     message: "Success!!!",
-                    id:userFind._id
+                    idUser: userFind._id
                 })
             }
         }
