@@ -5,6 +5,18 @@
   <title>$Title$</title>
 </head>
 <body>
-$END$
+<button onclick="success()">aaaaa</button>
 </body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function success() {
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 900
+    })
+  }
+</script>
 </html>

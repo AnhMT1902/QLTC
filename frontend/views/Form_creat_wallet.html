@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
 </head>
 <body>
-$END$
+<button onclick="showFormCreat()">aaaaa</button>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    showFormCreat = async () => {
+        const {value: formCreate} = await Swal.fire({
+            title: 'Create Wallet',
+            input: 'text',
+            inputPlaceholder: 'Name Wallet',
+        })
+        if (formCreate.length) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:3000/wallet/create/:id',
+                data: JSON.stringify(formCreate),
+                headers: {
+                    'Content-Type': 'application/json'
+                }, success: () => {
+                    alert("thanh cong")
+                }
+            })
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 900
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Wallet name cannot be empty!!!',
+            })
+        }
+    }
+
+</script>
 </html>
