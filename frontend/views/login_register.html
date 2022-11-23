@@ -282,13 +282,13 @@
                 <h2 class="title">Sign In</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" placeholder="UserName">
+                    <input type="text" id="username" placeholder="UserName" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
-                <input value="Login" class="btn solid" onclick="login()" style="text-align: center">
+                <input value="Login" class="btn solid" onclick="login()" style="text-align: center" type="submit">
                 <p class="social-text"> or Sign In social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -310,13 +310,13 @@
                 <h2 class="title">Sign Up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="usernameRegister" placeholder="UserName">
+                    <input type="text" id="usernameRegister" placeholder="UserName" required>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="passwordRegister" placeholder="Password">
+                    <input type="password" id="passwordRegister" placeholder="Password" required>
                 </div>
-                <input value="Sign Up" class="btn solid" onclick="register()" style="text-align: center">
+                <input value="Sign Up" class="btn solid" onclick="register()" style="text-align: center" type="submit">
                 <p class="social-text"> or Sign Up social Platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -401,7 +401,6 @@
             },
             success: (token) => {
                 localStorage.setItem('token', token.token);
-
             }
         })
     }
