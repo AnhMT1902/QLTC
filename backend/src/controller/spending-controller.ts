@@ -14,7 +14,7 @@ export class SpendingController {
     deleteSpending = async (req: Request, res: Response) => {
         await spendingService.deleteSpending(req, res)
     }
-    uploadSpending= async (req: Request, res: Response) => {
+    editSpending= async (req: Request, res: Response) => {
         await spendingService.editSpending(req, res)
     }
 }
