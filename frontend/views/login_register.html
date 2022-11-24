@@ -377,10 +377,9 @@
             },
             success: (token) => {
                 if(token.check===true){
-                   alert("dang ky thanh cong")
-                    document.location.href = "#login"
+                    alert('Register Success')
                 }else {
-                    alert("ten tai khoan da ton tai")
+                    alert('Account da ton tai!!!')
                 }
 
             }
@@ -410,8 +409,9 @@
                     alert("Wrong PassWord or User!!!")
                 } else {
                     localStorage.setItem('token', token.token);
-                    localStorage.setItem('idUser', token.idUser);
-                    document.location.href = "index.html"
+                    localStorage.setItem('id', token.idUser);
+
+                    document.location.href = "home.html"
                 }
             }
         })
