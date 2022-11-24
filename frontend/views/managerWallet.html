@@ -2,14 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wallet cua ban</title>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -88,9 +80,6 @@
 <script src="../template/assets/js/animation.js"></script>
 <script src="../template/assets/js/imagesloaded.js"></script>
 <script src="../template/assets/js/custom.js"></script>
-
-</body>
-</html>
 <script>
     showFormCreat = async () => {
         let name = $('#recipient-name').val();
@@ -138,7 +127,7 @@
     }
 
     function showWallet() {
-        let idUser = localStorage.getItem('idUser')
+        let idUser = localStorage.getItem('id')
         $.ajax({
             type: 'GET',
             url: `http://localhost:3000/wallet/showAll/:${idUser}`,
@@ -194,7 +183,7 @@
             </div>`;
                 for (let i = 0; i < wallet.length; i++) {
                     str += `<div class="col-lg-4">
-                <a href="http://localhost:3000/wallet/"><div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <a href="wallet.html"><div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="icon">
@@ -210,10 +199,11 @@
             </div>`
                 }
                 $(`#wallet`).html(str)
+                console.log(str)
             }
         })
-    }
 
+    }
     showWallet()
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
