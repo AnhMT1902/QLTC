@@ -5,23 +5,25 @@ import {Spending} from "../model/spending";
 
 class WalletService {
     getAllWallet = async (req: Request, res: Response) => {
-        let wallet = await Wallet.find()
+        let idUser = req.params.id.split(":")
+        let wallet = await Wallet.find({idUser: idUser[1]})
         res.status(200).json(wallet)
     }
 
     addWallet = async (req: Request, res: Response) => {
         let wallet = req.body;
-        let idUser = req.params.id;
-        let check = await this.checkNameWallet(idUser)
+        let check = await this.checkNameWallet(wallet)
+        console.log(check)
         if (check) {
-            wallet.idUser = idUser
             await Wallet.create(wallet);
             return res.status(201).json({
-                message: "Create Wallet Success!!!"
+                message: "Create Wallet Success!!!",
+                check: true
             })
         } else {
             return res.status(201).json({
-                message: "Error!!!"
+                message: "Error!!!",
+                check: false
             })
         }
     }
@@ -50,9 +52,10 @@ class WalletService {
         return res.status(201).json(arrWallet)
     }
 
-    checkNameWallet = async (idUser) => {
-        let wallet = await Wallet.find({idUser: idUser})
-        if (wallet.length === 0) {
+    checkNameWallet = async (wallet) => {
+        let wallets = await Wallet.find({idUser: wallet.idUser, name: wallet.name})
+        console.log(wallets)
+        if (wallets.length === 0) {
             return true
         } else
             return false
