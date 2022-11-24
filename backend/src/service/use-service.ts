@@ -65,20 +65,36 @@ class AccountService {
             message: "Edit Success!!!"
         })
     }
-    editPassword = async (req: Request, res: Response) =>{
-        let password = req.body;
-        let id = req.params.id;
-        await User.updateOne({_id:id},{$set:{password:password}});
-        return res.status(201).json({
-            message: "Upload Password Success!!!"
+    editPassword = async (req: Request, res: Response) => {
+        let idUser = req.params.id;
+        let userFind = await User.findOne({
+            _id: idUser
         })
+        let oldPassword = req.body.oldPassword;
+        let compare = await bcrypt.compare(oldPassword, userFind.password);
+        if (!compare) {
+            return res.status(200).json({
+                message: "Password cu khong chinh xac",
+                ck: false
+            })
+        } else {
+            let newPassword = req.body.newPassword;
+            newPassword = await bcrypt.hash(newPassword, 10);
+            await User.updateOne({_id: idUser}, {$set: {password: newPassword}});
+            return res.status(201).json({
+                message: "Upload Password Success!!!",
+                ck: true
+            })
+        }
     }
-    getInfoUser = async (req: Request, res: Response) => {
-        let id = req.params.id
-        let infoUser = await User.findById({_id: id});
-        console.log(infoUser._id, typeof (infoUser))
-        return res.status(200).json(infoUser);
-    }
+
+
+getInfoUser = async (req: Request, res: Response) => {
+    let id = req.params.id
+    let infoUser = await User.findById({_id: id});
+    console.log(infoUser._id, typeof (infoUser))
+    return res.status(200).json(infoUser);
+}
 }
 
 export default new AccountService();

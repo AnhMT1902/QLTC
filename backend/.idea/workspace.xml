@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887b751-8020-4b19-bc45-5afe08d84109" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/views/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/views/wallet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/template/assets/css/templatemo-seo-dream.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/template/assets/css/templatemo-seo-dream.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/login_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/login_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/views/spending.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/spending.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/managerWallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/managerWallet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +94,7 @@
       <workItem from="1669192840338" duration="1521000" />
       <workItem from="1669197304097" duration="4608000" />
       <workItem from="1669216402809" duration="769000" />
-      <workItem from="1669218892742" duration="6491000" />
+      <workItem from="1669218892742" duration="8794000" />
     </task>
     <servers />
   </component>
