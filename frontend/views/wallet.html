@@ -50,9 +50,10 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="home.html" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="login_register.html" onclick="logOut()">Đăng Xuất</a></li>
+                        <li class="scroll-to-section"><a href="login_register.html" onclick="logOut()">Đăng Xuất</a>
+                        </li>
                         <li class="scroll-to-section"><a href="passwordChange.html">Đổi Mật Khẩu</a></li>
-                        <li class="scroll-to-section"><a  onclick="showWallet()">Click</a></li>
+                        <li class="scroll-to-section"><a onclick="showWallet()">Click</a></li>
 
                     </ul>
                     <a class='menu-trigger'>
@@ -72,14 +73,14 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
 
-                    <h2> <span>Ví</span> Của Bạn<em></em></h2>
+                    <h2><span>Ví</span> Của Bạn<em></em></h2>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4" id="addWallet">
+            <div class="col-4" id="addWallet">
                 <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="row">
                         <div class="col-lg-4">
@@ -93,26 +94,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4">
-                <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="icon">
-                                <img src="../template/assets/images/service-icon-01.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="right-content" id="wallet">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-4" id="wallet">
             </div>
-
-
-
         </div>
+
+
+    </div>
 </div>
 </div>
 
@@ -128,26 +115,38 @@
 <script>
 
     function showWallet() {
-        let id=localStorage.getItem('id')
+        let id = localStorage.getItem('id')
         $.ajax({
             type: 'GET',
             url: `http://localhost:3000/wallet/show`,
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + localStorage.getItem('token')
+                 Authorization: 'Bearer ' + localStorage.getItem('token')
             },
             success: (wallet) => {
                 console.log(wallet)
                 let str = ``;
-                for (let i = 0; i<wallet.length;i++){
-                    str +=`<h4 >${wallet[i].name}</h4>
-                           <h4 >${wallet[i].money}</h4>`
+                for (let i = 0; i < wallet.length; i++) {
+                    str += `<div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="icon fas fa-plus " style=""></div>
+                        </div>
+                        <div class="col-lg-8" style="margin-top: -43px">
+                            <div class="right-content">
+                                <h4 style=" text-align: left;margin-top: 35px">${wallet[i].name}</h4>
+                                <h4 style=" text-align: left;margin-top: 35px">So du: ${wallet[i].money}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
                 }
                 $(`#wallet`).html(str)
             }
         })
     }
-    function logOut(){
+
+    function logOut() {
         localStorage.clear()
     }
 </script>
