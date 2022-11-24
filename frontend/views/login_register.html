@@ -335,7 +335,7 @@
             </form>
         </div>
     </div>
-    <div class="panels-container">
+    <div class="panels-container" id="login">
         <div class="panel left-panel">
             <div class="content">
                 <h3>Are you a new User??</h3>
@@ -410,6 +410,7 @@
                 } else {
                     localStorage.setItem('token', token.token);
                     localStorage.setItem('id', token.idUser);
+
                     document.location.href = "home.html"
                 }
             }
