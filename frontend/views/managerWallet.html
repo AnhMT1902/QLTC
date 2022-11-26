@@ -84,7 +84,7 @@
 <script>
     showFormCreat = async () => {
         let name = $('#recipient-name').val();
-        let idUser = localStorage.getItem('idUser')
+        let idUser = localStorage.getItem('id')
         let create = {
             name: name,
             idUser: idUser,
@@ -131,7 +131,7 @@
         let idUser = localStorage.getItem('id')
         $.ajax({
             type: 'GET',
-            url: `http://localhost:3000/wallet/showAll/:${idUser}`,
+            url: `http://localhost:3000/wallet/showAll/${idUser}`,
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -203,8 +203,8 @@
                 console.log(str)
             }
         })
-
     }
+
     showWallet()
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
