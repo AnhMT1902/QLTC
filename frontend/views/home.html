@@ -100,25 +100,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
     showName()
-    function showName (){
+
+    function showName() {
         let str = ``;
         let idUser = localStorage.getItem('id');
         $.ajax({
-            type:'GET',
-            url:`http://localhost:3000/user/infoUser/${idUser}`,
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + localStorage.getItem('token')
-            },
-            success :(info)=>{
-                if(info.name===undefined){
-                    str =`Hello`
-                }else {
-                    str = `Hello ${info.name}`
+                type: 'GET',
+                url: `http://localhost:3000/user/infoUser/${idUser}`,
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                },
+                success: (info) => {
+                    if (info.name === undefined) {
+                        str = `Hello`
+                    } else {
+                        str = `Hello ${info.name}`
+                    }
+                    $(`#showUserName`).html(str)
                 }
-                $(`#showUserName`).html(str)
-            }
-        })
+            })
     }
 </script>
 </body>
