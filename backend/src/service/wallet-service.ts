@@ -72,7 +72,8 @@ class WalletService {
     calSurplus = async (req: Request, res: Response, idWallet) => {
         let revenue: number = 0
         let spend: number = 0
-        let arrDetail = await Detail.find({idWallet: idWallet}).populate('Spending', "classify")
+        let arrDetail = await Detail.find({idWallet: idWallet}).populate('Spending', "classify");
+        console.log(arrDetail)
         arrDetail.forEach((item) => {
             if (item.Spending.classify === true) {
                 revenue += item.money

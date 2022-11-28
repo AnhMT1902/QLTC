@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887b751-8020-4b19-bc45-5afe08d84109" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/views/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/views/wallet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/template/assets/css/templatemo-seo-dream.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/template/assets/css/templatemo-seo-dream.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/login_and_register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/printB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/template/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/login_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/login_register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/managerWallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/managerWallet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/passwordChange.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/passwordChange.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/spending.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/spending.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +51,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/adnin/Desktop/New folder/frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adnin/Desktop/case_new/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\adnin\\Desktop\\New folder\\backend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\adnin\\Desktop\\case_new\\backend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -65,6 +69,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adnin\Desktop\case_new\backend" />
       <recent name="C:\Users\adnin\Desktop\meomeoSneaker" />
       <recent name="C:\Users\adnin\Desktop\meomeoSneaker\node_modules" />
     </key>
@@ -95,6 +100,10 @@
       <workItem from="1669197304097" duration="4608000" />
       <workItem from="1669216402809" duration="769000" />
       <workItem from="1669218892742" duration="8794000" />
+      <workItem from="1669623151709" duration="717000" />
+      <workItem from="1669624308171" duration="2637000" />
+      <workItem from="1669646758082" duration="48000" />
+      <workItem from="1669646858934" duration="5073000" />
     </task>
     <servers />
   </component>
