@@ -13,7 +13,6 @@ class WalletService {
     addWallet = async (req: Request, res: Response) => {
         let wallet = req.body;
         let check = await this.checkNameWallet(wallet)
-        console.log(check)
         if (check) {
             await Wallet.create(wallet);
             return res.status(201).json({
@@ -54,7 +53,6 @@ class WalletService {
 
     checkNameWallet = async (wallet) => {
         let wallets = await Wallet.find({idUser: wallet.idUser, name: wallet.name})
-        console.log(wallets)
         if (wallets.length === 0) {
             return true
         } else
@@ -63,7 +61,7 @@ class WalletService {
 
     showWalletById = async (req: Request, res: Response) => {
         let idWallet = req.params.id
-        let wallet = await Wallet.findOne({_id: idWallet})
+        let wallet = await Detail.find({idWallet: idWallet})
         let money = +await this.calSurplus(req, res, idWallet)
         await Wallet.updateOne({_id: idWallet}, {$set: {money: money}});
         return res.status(201).json(wallet)
@@ -73,7 +71,6 @@ class WalletService {
         let revenue: number = 0
         let spend: number = 0
         let arrDetail = await Detail.find({idWallet: idWallet}).populate('Spending', "classify");
-        console.log(arrDetail)
         arrDetail.forEach((item) => {
             if (item.Spending.classify === true) {
                 revenue += item.money

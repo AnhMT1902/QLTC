@@ -23,7 +23,7 @@ class DetailService {
     deleteDetail = async (req: Request, res: Response) => {
         let idDetail = req.params.id
         let detail = await Detail.findOne({_id: idDetail});
-        let idWallet = String(detail.idWallet)
+        let idWallet = String(detail.Wallet)
         let arrDetail = await Detail.deleteOne({_id: detail._id})
         let money = +await WalletService.calSurplus(req, res, idWallet)
         await Wallet.updateOne({_id: idWallet}, {$set: {money: money}});
