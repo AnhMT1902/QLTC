@@ -1,6 +1,6 @@
-showWallet()
 function showWallet() {
     let idUser = localStorage.getItem('id')
+    console.log(idUser)
     $.ajax({
         type: 'GET', url: `http://localhost:3000/wallet/showAll/:${idUser}`, headers: {
             'Content-Type': 'application/json', Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -85,4 +85,40 @@ function showWallet() {
             $(`#body`).html(str)
         }
     })
+}
+
+
+showFormCreat = async () => {
+    showWallet()
+    let name = $('#recipient-name').val();
+    let idUser = localStorage.getItem('id')
+    let create = {
+        name: name,
+        idUser: idUser,
+        money: 0
+    }
+    console.log(create)
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/wallet/create',
+        data: JSON.stringify(create),
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+        }, success: (check) => {
+            console.log(check)
+            if (check.check) {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 900
+                })
+            } else {
+                alert("ten vi da ton tai")
+            }
+        }
+    })
+
 }
