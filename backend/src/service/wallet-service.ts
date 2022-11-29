@@ -5,8 +5,8 @@ import {Spending} from "../model/spending";
 
 class WalletService {
     getAllWallet = async (req: Request, res: Response) => {
-        let idUser = req.params.id.split(":")
-        let wallet = await Wallet.find({idUser: idUser[1]})
+        let idUser = req.params.id
+        let wallet = await Wallet.find({idUser: idUser})
         res.status(200).json(wallet)
     }
 

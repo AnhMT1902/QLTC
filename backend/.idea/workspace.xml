@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887b751-8020-4b19-bc45-5afe08d84109" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/template/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/index.html" afterDir="false" />
     </list>
