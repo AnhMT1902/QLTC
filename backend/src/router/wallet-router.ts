@@ -2,7 +2,7 @@ import {Router} from "express";
 import WalletController from "../controller/wallet-controller";
 import {auth} from "../middleware/auth";
 export const walletRouter = Router();
-// walletRouter.use(auth)
+walletRouter.use(auth)
 walletRouter.get('/showAll/:id', WalletController.showWallet);
 walletRouter.get('/show/:id', WalletController.showWalletById);
 walletRouter.post('/create', WalletController.createWallet);
