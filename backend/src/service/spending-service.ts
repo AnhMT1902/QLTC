@@ -5,7 +5,8 @@ import {User} from "../model/user";
 
 class SpendingService {
     findAll = async (req: Request, res: Response) => {
-        let spending = await Spending.find();
+        let idUser = req.params.idUser
+        let spending = await Spending.find({User: idUser});
         return res.status(200).json(spending)
     }
 
