@@ -47,8 +47,11 @@ class WalletService {
     }
 
     findWalletByName = async (req: Request, res: Response) => {
-        let walletName = req.body.name
-        let arrWallet = await Wallet.find({'name': {'$regex': walletName}})
+        let {name} = req.query
+        let arrWallet = await Wallet.find({
+            name: {$regex: name}
+        })
+
         return res.status(201).json(arrWallet)
     }
 
@@ -84,5 +87,4 @@ class WalletService {
         return revenue - spend
     }
 }
-
 export default new WalletService();
