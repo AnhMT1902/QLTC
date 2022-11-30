@@ -50,35 +50,35 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script>
-    showFormCreat = async () => {
-        let name = $('#recipient-name').val();
-        let idUser = localStorage.getItem('idUser')
-        let create = {
-            name: name,
-            idUser: idUser
-        }
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:3000/wallet/create',
-            data: JSON.stringify(create),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + localStorage.getItem('token')
-            }, success: (check) => {
-                console.log(check)
-                if (check.check) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 900
-                    })
-                } else {
-                    alert("ten vi da ton tai")
-                }
-            }
-        })
-    }
+    // showFormCreat = async () => {
+    //     let name = $('#recipient-name').val();
+    //     let idUser = localStorage.getItem('idUser')
+    //     let create = {
+    //         name: name,
+    //         idUser: idUser
+    //     }
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'http://localhost:3000/wallet/create',
+    //         data: JSON.stringify(create),
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: 'Bearer ' + localStorage.getItem('token')
+    //         }, success: (check) => {
+    //             console.log(check)
+    //             if (check.check) {
+    //                 Swal.fire({
+    //                     position: 'top-center',
+    //                     icon: 'success',
+    //                     title: 'Your work has been saved',
+    //                     showConfirmButton: false,
+    //                     timer: 900
+    //                 })
+    //             } else {
+    //                 alert("ten vi da ton tai")
+    //             }
+    //         }
+    //     })
+    // }
 </script>
 </html>

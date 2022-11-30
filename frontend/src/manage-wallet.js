@@ -1,6 +1,6 @@
-
 function showWallet() {
     let idUser = localStorage.getItem('id')
+    console.log(idUser)
     $.ajax({
         type: 'GET', url: `http://localhost:3000/wallet/showAll/:${idUser}`,
         headers: {
@@ -126,6 +126,7 @@ function showWallet() {
 }
 
 
+
 creatWallet = async () => {
     let name = $('#recipient-name').val();
     let idUser = localStorage.getItem('id')
@@ -156,6 +157,7 @@ creatWallet = async () => {
         }
     })
 }
+
 removeWallet = async (id)=>{
             const  check = confirm('Ban Co Muon Xoa Vi Nay')
         if(check){
@@ -365,9 +367,5 @@ function showWallets(data) {
             </div>`
             }
             $(`#body`).html(str)
-
-
 }
-
-
-
+}
