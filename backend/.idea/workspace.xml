@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887b751-8020-4b19-bc45-5afe08d84109" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/template/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/spending.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/spending.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +103,9 @@
       <workItem from="1669624308171" duration="2637000" />
       <workItem from="1669646758082" duration="48000" />
       <workItem from="1669646858934" duration="14334000" />
+      <workItem from="1669731429802" duration="272000" />
+      <workItem from="1669731741998" duration="3367000" />
+      <workItem from="1669775760177" duration="1735000" />
     </task>
     <servers />
   </component>

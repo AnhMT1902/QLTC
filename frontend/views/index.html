@@ -20,26 +20,28 @@
     <link rel="stylesheet" href="../template/assets/css/templatemo-seo-dream.css">
     <link rel="stylesheet" href="../template/assets/css/animated.css">
     <link rel="stylesheet" href="../template/assets/css/owl.css">
-    <title>AACD</title>
     <script src="../src/printB.js"></script>
-
+    <title>AACD</title>
 
 </head>
 <body>
-***** Header Area Start *****
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="/index.html" class="logo">
+                    <a onclick="showHomeHtml()" class="logo">
                         <h4>AACD<img src="../template/assets/images/logo-icon.png" alt=""></h4>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a class="active">Home</a></li>
+                        <fieldset>
+                            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                   placeholder="Your Email" required="">
+                        </fieldset>
+                        <li class="scroll-to-section"><a class="active" onclick="showHomeHtml()">Home</a></li>
                         <li class="scroll-to-section"><a>Danh Mục Chi Tiêu</a></li>
                         <li class="scroll-to-section"><a onclick="showWallet()">Ví của tôi</a></li>
                         <li class="scroll-to-section"><a href="login_register.html" onclick="logOut()">Đăng Xuất</a>
@@ -55,71 +57,14 @@
         </div>
     </div>
 </header>
-***** Header Area End *****
 <div id="body">
 </div>
-<script>
-    printA()
-
-    function printA() {
-        let str = `<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6 align-self-center">
-                        <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="info-stat">
-                                        <h6>Agency Status:</h6>
-                                        <h4>Ready Work</h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="info-stat">
-                                        <h6>Price:</h6>
-                                        <h4>$720/Month</h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="info-stat">
-                                        <h6>Schedules</h6>
-                                        <h4>$450/Meeting</h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <h2>SEO &amp; Digital Marketing Agency</h2>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="main-green-button scroll-to-section">
-                                        <a onclick="printB()">Get Your Quote</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <img src="assets/images/banner-right-image.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>`
-        document.getElementById("body").innerHTML = str
-    }
-
-</script>
 <script src="../template/vendor/jquery/jquery.min.js"></script>
 <script src="../template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../template/assets/js/owl-carousel.js"></script>
 <script src="../template/assets/js/animation.js"></script>
 <script src="../template/assets/js/imagesloaded.js"></script>
 <script src="../template/assets/js/custom.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -131,5 +76,9 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="../src/manage-wallet.js"></script>
+<script src="../src/home.js"></script>
+<script src="../src/detail-wallet.js"></script>
+<script src="../src/logout.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

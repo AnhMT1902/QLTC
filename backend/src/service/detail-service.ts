@@ -11,13 +11,15 @@ class DetailService {
         res.status(200).json(walletDetail)
     }
     creatDetail = async (req: Request, res: Response) => {
-        let idWallet = req.params.id
-        let detail = req.body
-        detail.idWallet = idWallet;
+        let idWallet = req.params.id;
+        let detail = req.body;
+        detail.Wallet = idWallet;
         await Detail.create(detail)
         let money = +await WalletService.calSurplus(req, res, idWallet)
         await Wallet.updateOne({_id: idWallet}, {$set: {money: money}});
-        return res.status(200).json(detail)
+        return res.status(200).json({
+            message: "creat success"
+        })
     }
 
     deleteDetail = async (req: Request, res: Response) => {

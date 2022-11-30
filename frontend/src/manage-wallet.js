@@ -1,8 +1,8 @@
 function showWallet() {
     let idUser = localStorage.getItem('id')
-    console.log(idUser)
     $.ajax({
-        type: 'GET', url: `http://localhost:3000/wallet/showAll/:${idUser}`, headers: {
+        type: 'GET', url: `http://localhost:3000/wallet/showAll/${idUser}`,
+        headers: {
             'Content-Type': 'application/json', Authorization: 'Bearer ' + localStorage.getItem('token')
         }, success: (wallet) => {
             let str = `
@@ -57,7 +57,7 @@ function showWallet() {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" onclick="showFormCreat()" class="btn btn-primary"
+                                <button type="button" onclick="creatWallet()" class="btn btn-primary"
                                         data-bs-dismiss="modal">Send Create
                                 </button>
                             </div>
@@ -67,7 +67,7 @@ function showWallet() {
             </div>`;
             for (let i = 0; i < wallet.length; i++) {
                 str += `<div class="col-lg-4">
-                <a href="wallet.html"><div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <a onclick="showDetailWallet('${wallet[i]._id}')"><div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="icon">
@@ -88,8 +88,7 @@ function showWallet() {
 }
 
 
-showFormCreat = async () => {
-    showWallet()
+creatWallet = async () => {
     let name = $('#recipient-name').val();
     let idUser = localStorage.getItem('id')
     let create = {
@@ -111,14 +110,20 @@ showFormCreat = async () => {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
-                    title: 'Your work has been saved',
+                    title: 'thêm ví thành công',
                     showConfirmButton: false,
                     timer: 900
                 })
             } else {
-                alert("ten vi da ton tai")
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'tên ví đã được sử dụng',
+                    showConfirmButton: false,
+                    timer: 900
+                })
             }
+            showWallet()
         }
     })
-
 }
