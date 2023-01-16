@@ -39,16 +39,18 @@ class WalletService {
     editWallet = async (req: Request, res: Response) => {
         let id = req.params.id
         let newWallet = req.body
-        await Wallet.updateOne({_id: id}, {$set: newWallet})
+        console.log(newWallet)
+        await Wallet.updateOne({_id: id}, {$set: {name: newWallet.name}})
         return res.status(201).json({
             message: "Edit Success"
         })
     }
 
     findWalletByName = async (req: Request, res: Response) => {
-        let {name} = req.query
+        let name = req.query
+        console.log(name)
         let arrWallet = await Wallet.find({
-            name: {$regex: name}
+            name: {$regex: name.name}
         })
 
         return res.status(201).json(arrWallet)
@@ -64,7 +66,9 @@ class WalletService {
 
     showWalletById = async (req: Request, res: Response) => {
         let idWallet = req.params.id
+        console.log(idWallet)
         let wallet = await Detail.find({Wallet: idWallet}).populate('Spending').populate('Wallet')
+        console.log(wallet)
         let money = +await this.calSurplus(req, res, idWallet)
         await Wallet.updateOne({_id: idWallet}, {$set: {money: money}});
         return res.status(201).json(wallet)

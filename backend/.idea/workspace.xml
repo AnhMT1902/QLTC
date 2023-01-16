@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887b751-8020-4b19-bc45-5afe08d84109" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/manage-infomation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/spending.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/detail-wallet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/manage-wallet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/printB.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/printB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/Form_creat_wallet.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/views/spending.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/spending.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/information.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/login_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/views/login_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/managerWallet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/passwordChange.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/spending.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/views/wallet.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +111,10 @@
       <workItem from="1669646858934" duration="14334000" />
       <workItem from="1669731429802" duration="272000" />
       <workItem from="1669731741998" duration="3367000" />
-      <workItem from="1669775760177" duration="1735000" />
+      <workItem from="1669775760177" duration="2327000" />
+      <workItem from="1669779508795" duration="11838000" />
+      <workItem from="1669865429477" duration="475000" />
+      <workItem from="1669865934470" duration="261000" />
     </task>
     <servers />
   </component>

@@ -10,7 +10,7 @@ app.use(fileUpload({
 }));
 app.use(express.static('public'));
 app.use(express.json())
-mongoose.connect('mongodb+srv://Dung:CodeGym%4017t4@cluster0.0cvbdt1.mongodb.net/finance').then(() => {
+mongoose.connect('mongodb://127.0.0.1:27017/finance').then(() => {
     console.log('connected')
 }).catch((err) => {
     console.log(err)
